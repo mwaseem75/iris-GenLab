@@ -54,7 +54,7 @@ def sign_up():
             flash("Email is invalid.", category='error')
         else:
             new_user = User(email=email, username=username, password=generate_password_hash(
-                password1, method='sha256'))
+                password1))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
@@ -84,8 +84,7 @@ def change_password():
                 elif len(password1) < 6:
                     flash('Password is too short', category='error')
                 else:
-                    user.password = generate_password_hash(
-                        password1, method='sha256')
+                    user.password = generate_password_hash(password1)
                     db.session.commit()
                     login_user(user, remember=True)
                     flash('Password changed successfully', category='error')

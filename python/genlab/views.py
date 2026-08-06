@@ -5,12 +5,13 @@ from .myconfig import *
 from transformers import pipeline
 from .chat import get_response
 from spacy import displacy
-from langchain import HuggingFaceHub, LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.chat_models import ChatOpenAI
-from langchain.chains.conversation.memory import ConversationEntityMemory
-from langchain.chains import ConversationChain
-from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
+from langchain_community.llms import HuggingFaceHub
+from langchain_classic.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_classic.chains.conversation.memory import ConversationEntityMemory
+from langchain_classic.chains import ConversationChain
+from langchain_classic.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
 import spacy,json,os
 import google.generativeai as palm
 

@@ -6,7 +6,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     username = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
+    password = db.Column(db.String(256))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     def __repr__(self):
         return f'{self.username}'
