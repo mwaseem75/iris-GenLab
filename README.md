@@ -43,7 +43,7 @@ Open myconfig.py file in python/genlab folder and enter the required keys (For w
 ## To Run Flask application
 Run the below command in Git Bash terminal
 ```
-docker-compose exec iris bash
+docker exec -it <container ID> bash
 ```
 Now run below command to start flask application
 ```
